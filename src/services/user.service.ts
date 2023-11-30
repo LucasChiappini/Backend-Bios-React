@@ -17,7 +17,6 @@ export const getUserService = async (query: any) => {
   const users = await getUsersStorage(filter);
   return users;
 };
-//Si queremos hacer el filtrado con Sort, hay un ejemplo en la clase 1 de noviembre, minuto 30.
 
 export const createUserService = async (user: IUser) => {
   const newUser = await createUserStorage(user);

@@ -2,7 +2,6 @@ import { NextFunction, Request, Response } from "express";
 import { ErrorHandler } from "../handlers/error.handler";
 import { ResponseHandler } from "../handlers/response.handler";
 import { IUser } from "../models/user.interface";
-import { User } from "../schemas/user.schema";
 import {
   createUserService,
   deleteUserService,
@@ -57,14 +56,14 @@ export const updateUser = async (
   const updatedUser = await updateUserService(id, user);
 
   if (!updatedUser) {
-    next(new ErrorHandler(404, "No se encontraron usuarios❌"));
+    next(new ErrorHandler(404, "No se encontraron usuarios ❌"));
   }
 
   if (updatedUser instanceof ErrorHandler) {
     next(updateUser);
   }
 
-  next(new ResponseHandler(200, updatedUser, "Usuario actualizado✅👤"));
+  next(new ResponseHandler(200, updatedUser, "Usuario actualizado ✅👤"));
 };
 
 export const deleteUser = async (
@@ -77,12 +76,12 @@ export const deleteUser = async (
   const user =await deleteUserService(id);
 
   if (!user) {
-    next(new ErrorHandler(404, "No se encontro el usuario❌👤"));
+    next(new ErrorHandler(404, "No se encontro el usuario ❌👤"));
   }
 
   if (user instanceof ErrorHandler) {
     next(user);
   }
 
-  next(new ResponseHandler(200, user, "Usuario eliminado✅👤🗑️"));
+  next(new ResponseHandler(200, user, "Usuario eliminado ✅👤🗑️"));
 };
