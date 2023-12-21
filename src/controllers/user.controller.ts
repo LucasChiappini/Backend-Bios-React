@@ -5,9 +5,33 @@ import { IUser } from "../models/user.interface";
 import {
   createUserService,
   deleteUserService,
+  getUserSearchService,
+  getUserSearchServiceSpecific,
   getUserService,
   updateUserService,
 } from "../services/user.service";
+
+export async function getUserSearch(req: Request, res: Response): Promise<void> {
+  const { username } = req.params;
+
+  try {
+    const user = await getUserSearchService(username);
+    res.status(200).json(user);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+}
+
+export async function getUserSearchSpecific(req: Request, res: Response): Promise<void> {
+  const { username } = req.params;
+
+  try {
+    const user = await getUserSearchServiceSpecific(username);
+    res.status(200).json(user);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+}
 
 export const getUser = async (
   req: Request,

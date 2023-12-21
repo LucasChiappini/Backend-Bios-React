@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "16d0983d-ce9a-43ad-a0d2-1b05e0d19488",
-		"name": "GitHub-Searcher",
+		"name": "GitHub-Searcher-CRUD",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "29885058"
 	},
@@ -56,27 +56,27 @@
 					"urlencoded": [
 						{
 							"key": "name",
-							"value": "Juan Cardenas",
+							"value": "Fernando Gonzales",
 							"type": "text"
 						},
 						{
 							"key": "bio",
-							"value": "Desarrollador",
+							"value": "Team leader",
 							"type": "text"
 						},
 						{
 							"key": "email",
-							"value": "Juan@gmail.com",
+							"value": "frgonzales@gmail.com",
 							"type": "text"
 						},
 						{
 							"key": "location",
-							"value": "Colombia",
+							"value": "Peru",
 							"type": "text"
 						},
 						{
 							"key": "followers",
-							"value": "56",
+							"value": "1",
 							"type": "text"
 						}
 					]
@@ -339,7 +339,7 @@
 					"variable": [
 						{
 							"key": "id",
-							"value": ""
+							"value": "65722905f2356fe11aab0b30"
 						}
 					]
 				}

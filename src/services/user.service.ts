@@ -5,6 +5,35 @@ import {
   updateUserStorage,
 } from "../storage/user.storage";
 import { IUser } from "../models/user.interface";
+import axios from "axios";
+
+export async function getUserSearchService(username: string): Promise<any[]> {
+  try {
+    const response = await axios.get(
+      `https://api.github.com/search/users?q=${username}`
+    );
+    return response.data;
+  } catch (error) {
+    throw new Error(
+      `Error fetching user ${username} from GitHub API: ${error.message}`
+    );
+  }
+}
+
+export async function getUserSearchServiceSpecific(
+  username: string
+): Promise<any[]> {
+  try {
+    const response = await axios.get(
+      `https://api.github.com/users/${username}`
+    );
+    return response.data;
+  } catch (error) {
+    throw new Error(
+      `Error fetching user ${username} from GitHub API: ${error.message}`
+    );
+  }
+}
 
 export const getUserService = async (query: any) => {
   const filter = {};

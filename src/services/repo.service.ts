@@ -1,3 +1,4 @@
+import axios from "axios";
 import { IRepo } from "../models/repo.interface";
 import {
   createRepoStorage,
@@ -5,6 +6,15 @@ import {
   getRepoStorage,
   updateRepoStorage,
 } from "../storage/repo.storage";
+
+export async function getRepoSearchService(inputValue:string, language:string, date:string): Promise<any[]> {
+  try {
+    const response = await axios.get(`https://api.github.com/search/repositories?q=${inputValue}+language:${language}+created:>=${date}`);
+    return response.data;
+  } catch (error) {
+    throw new Error(`Error fetching repo from GitHub API: ${error.message}`);
+  }
+};
 
 export const getRepoService = async (query: any) => {
   const filter = {};

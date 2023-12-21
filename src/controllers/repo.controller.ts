@@ -5,9 +5,22 @@ import { IRepo } from "../models/repo.interface";
 import {
   createRepoService,
   deleteRepoService,
+  getRepoSearchService,
   getRepoService,
   updateRepoService,
 } from "../services/repo.service";
+
+export async function getRepoSearch(req: Request, res: Response): Promise<void> {
+  const { inputValue, language, date } = req.params;
+
+  try {
+    const repo = await getRepoSearchService(inputValue, language, date);
+    res.status(200).json(repo);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+}
+
 
 export const getRepo = async (
   req: Request,

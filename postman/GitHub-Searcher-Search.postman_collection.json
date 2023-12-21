@@ -1,0 +1,102 @@
+{
+	"info": {
+		"_postman_id": "1a995385-a515-41ac-9384-2dd09a035304",
+		"name": "GitHub-Searcher-Search",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29885058"
+	},
+	"item": [
+		{
+			"name": "GetUsersSearch",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9000/api/users/:username",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"users",
+						":username"
+					],
+					"variable": [
+						{
+							"key": "username",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetUsersSearchSpecific",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9000/api/userSpecific/:username",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"userSpecific",
+						":username"
+					],
+					"variable": [
+						{
+							"key": "username",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetReposSearch",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9000/api/repos/:inputValue/:language/:date",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"repos",
+						":inputValue",
+						":language",
+						":date"
+					],
+					"variable": [
+						{
+							"key": "inputValue",
+							"value": ""
+						},
+						{
+							"key": "language",
+							"value": ""
+						},
+						{
+							"key": "date",
+							"value": "",
+							"description": "Format date: YEAR-MONTH-DAY"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

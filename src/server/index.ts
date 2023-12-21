@@ -7,6 +7,10 @@ import repoRoutes from "../server/routes/repos.routes";
 const app = express();
 app.use(express.json());
 
+var cors = require('cors')
+
+app.use(cors()) 
+
 //Middlewares
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
